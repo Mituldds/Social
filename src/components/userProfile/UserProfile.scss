@@ -1,0 +1,139 @@
+.user-profile {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    .cover-photo {
+        height: 20vh;
+        width: 100vw;
+        background-image: url('../../assets/Rectangle\ 246.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        background-position: center;
+        position: relative;
+        border: 1px solid red;
+
+        img {
+            border-radius: 50%;
+            position: absolute;
+            bottom: -45px;
+            left: 70px;
+            object-fit: cover;
+        }
+
+        button{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 15px;
+            right: 50px;
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgb(219, 211, 211);
+            }
+
+            &:active{
+                scale: 0.9;
+            }
+
+            .back-icon{
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .user-info{
+        height: 20vh;
+        width: 100vw;
+        display: flex;
+        position: relative;
+        border: 1px solid green;
+
+        .left{
+            position: absolute;
+            bottom: 10px;
+            left: 60px;
+
+            pre{
+                font-size: 0.9rem;
+                font-family: sans-serif;
+                line-height: 1.5;
+
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .right{
+            position: absolute;
+            top: 70px;
+            right: 50px;
+
+            .edit-btn{
+                background-color: #2E7D32;
+            }
+        }
+    }
+
+    .user-posts{
+        height: 90vh;
+        width: 100vw;
+        border: 1px solid blue;
+
+        .post-container{
+            height: 95%;
+            width: 95%;
+            border: 1px solid red;
+            
+            .header{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+
+                button{
+                    padding: 10px 20px;
+                    background: transparent;
+                    border: none; 
+                    
+                    &:hover{
+                        background-color: rgba(128, 122, 122, 0.253);
+                        cursor: pointer;
+                    }
+                }
+
+                .selected{
+                    border-bottom: 1px solid green;
+                }
+            }
+
+            .content{
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                row-gap: 30px;
+                height: 88%;
+                padding: 15px;
+                overflow: auto;
+                border: 1px solid black;
+
+                img{
+                    height: 150px;
+                    justify-self: center;
+                    width: 100px;
+                    object-fit: cover;
+                    scale: 1;
+                    transition: all ease-in 0.1s;
+
+                    &:hover{
+                        scale: 1.2;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+.post {
+    margin: 20px 0;
+    height: auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    position: relative;
+
+    .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .post-info {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border: 1px solid black;
+
+            .bio {
+                // border: 1px solid blue;
+                width: 90%;
+                font-weight: 500;
+            }
+
+            .time-stamp {
+                width: 90%;
+                font-size: 0.8rem;
+                font-style: italic;
+            }
+        }
+
+        .btn {
+            width: 20%;
+            // background-color: red;
+        }
+    }
+
+    .post-content {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        .post-left {
+            img {
+                height: 300px;
+                width: 200px;
+                object-fit: cover;
+            }
+        }
+
+        .post-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            gap: 20px;
+
+            .likes,
+            .comments {
+                flex-direction: column;
+                gap: 5px;
+
+                .icon {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+
+                    .like-icon,
+                    .comment-icon {
+                        font-size: 1.5rem;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .post-comments {
+        position: absolute;
+        height: 323px;
+        width: 300px;
+        background-color: wheat;
+        top: 55px;
+        right: -150px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .comment-list {
+            height: 84%;
+            overflow: auto;
+            // background-color: blue;
+
+            .no-comment{
+                height: 100%;
+            }
+        }
+
+        .send-comment {
+            height: 15%;
+            // background-color: green;
+
+            .comment-form {
+                display: flex;
+                gap: 5px;
+                height: 100%;
+                width: 100%;
+
+                input{
+                    padding: 0 5px;
+                    border: none;
+                    border-top: 1px solid black;
+                    outline: none;
+                    font-size: 1.1rem;
+                    height: 100%;
+                    width: 75%;
+                    // border-radius: 5px;
+                    background: transparent;
+                }
+
+                button{
+                    height: 100%;
+                    width: 25%;
+                    border: none;
+                    outline: none;
+                    background-color: #2E7D32;
+
+                    &:hover{
+                        background-color: #4ac951;
+                    }
+
+                    &:active{
+                        scale: 0.9;
+                    }
+
+                    .send-icon{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

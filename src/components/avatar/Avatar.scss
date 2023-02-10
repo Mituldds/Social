@@ -1,0 +1,17 @@
+.Avatar {
+    img {
+        // height: 50px;
+        // width: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+        
+        &:active {
+            scale: 0.9;
+        }
+
+        &:hover{
+            cursor: pointer;
+            box-shadow: 2px 2px 10px 1px green;
+        }
+    }
+}

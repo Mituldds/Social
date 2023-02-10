@@ -1,0 +1,31 @@
+.comment{
+    padding: 5px 8px;
+    justify-content: flex-start;
+    gap: 10px;
+    position: relative;
+    // background-color: yellow;
+
+    .avatar{
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        // background-color: green;
+    }
+
+    .msg{
+        margin-left: 35px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .text{
+            display: flex;
+            align-items: center;
+        }
+
+        .time-stamp{
+            font-size: 0.75rem;
+            font-style: italic;
+        }
+    }
+}
