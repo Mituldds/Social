@@ -9,6 +9,8 @@ import { setSelectedPostType } from '../../redux/slices/userProfileSlice'
 import { userFollowUnFollow } from '../../utils/FirebaseServices'
 import UpdateProfile from '../updateProfile/UpdateProfile'
 import dummy from '../../assets/user.png'
+import { setMenu } from '../../redux/slices/appConfigSlice'
+import { sortAllMessages } from '../../redux/slices/chatSlice'
 
 const UserProfile = () => {
 
@@ -45,11 +47,16 @@ const UserProfile = () => {
         dispatch(setSelectedPostType(type))
     }
 
+    const backToHome = () => {
+        dispatch(setMenu('Home'));
+        navigate('/');
+    }
+
     return (
         <div className='user-profile'>
             <div className="cover-photo">
                 <img width='100px' src={userProfile?.photoUrl || dummy } alt="" />
-                <button className='center' onClick={() => navigate('/')}><AiOutlineRollback className='back-icon' /> &nbsp; Back to home</button>
+                <button className='center' onClick={backToHome}><AiOutlineRollback className='back-icon' /> &nbsp; Back to home</button>
             </div>
             <div className="user-info">
                 <div className="left">

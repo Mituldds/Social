@@ -1,0 +1,30 @@
+.user-card{
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background-color: rgba(46, 125, 50, 0.212);
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgba(46, 125, 50, 0.37);
+    }
+
+    .user-card-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: sans-serif;
+        gap: 8px;
+        // background-color: purple;
+
+        .top-msg{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .bottom-msg{
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+    }
+}

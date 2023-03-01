@@ -8,14 +8,36 @@ import { CgProfile } from 'react-icons/cg'
 import Feed from '../feed/Feed'
 import { useDispatch, useSelector } from 'react-redux'
 import { setMenu } from '../../redux/slices/appConfigSlice'
+import Chat from '../chat/Chat'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { getAllPostsOfAUser } from '../../utils/FirebaseServices'
+import Notification from '../notification/Notification'
 
 const Home = () => {
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const menu = useSelector(state => state.appConfigReducer.menu);
+    const myProfile = useSelector(state => state.appConfigReducer.myProfile);
 
     const changeMenu = (e) => {
         dispatch(setMenu(e.target.innerText));
+        if (e.target.innerText == 'Profile') {
+            getAllPostsOfAUser(myProfile?.id).then((res) => {
+                if (res.status === 'ok') {
+                    navigate(`/userProfile`);
+                }
+            });
+        }
+        else if (e.target.innerText == 'Chat') {
+            navigate(`/chats`);
+        }
+        else if (e.target.innerText == 'Notification') {
+            navigate(`/notifications`);
+        }
+        else if (e.target.innerText == 'Home') {
+            navigate(`/`);
+        }
     }
 
     return (
@@ -51,7 +73,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="right">
-                    <Feed />
+                    {/* <Chat /> */}
+                    {/* <Notification/> */}
+                    {/* <Feed/> */}
+                    <Outlet />
                 </div>
             </div>
         </div>

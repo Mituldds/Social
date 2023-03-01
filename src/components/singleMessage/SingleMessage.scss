@@ -1,0 +1,63 @@
+.single-message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    // background-color: aqua;
+
+
+    .msg {
+        position: relative;
+        padding: 5px;
+        max-width: 70%;
+        color: white;
+        border-radius: 5px;
+        align-items: start;
+        gap: 5px;
+        flex-direction: column;
+        cursor: pointer;
+
+        .chat-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .time {
+            font-style: italic;
+            font-size: 0.6rem;
+        }
+
+        .deleteChat-icon {
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            bottom: -3%;
+            right: -13%;
+        }
+    }
+
+}
+
+.start {
+    align-items: start;
+}
+
+.end {
+    align-items: end;
+}
+
+.green {
+    background-color: rgb(60, 158, 101);
+}
+
+.blue {
+    background-color: rgb(62, 139, 190);
+}

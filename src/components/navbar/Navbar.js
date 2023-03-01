@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.scss'
 import logo from '../../assets/image 2.png'
 import { Button, Box, Modal } from '@mui/material'
@@ -8,6 +8,7 @@ import { auth } from '../../firebaseConfig';
 import { useSelector } from 'react-redux';
 import CreatePost from '../createPost/CreatePost';
 import Avatar from '../avatar/Avatar';
+import { getNotifications } from '../../utils/FirebaseServices';
 
 const Navbar = () => {
 
@@ -18,6 +19,12 @@ const Navbar = () => {
     const handleClose = () => setOpen(false);
 
     const myProfile = useSelector(state => state.appConfigReducer.myProfile);
+
+    useEffect(() => {
+        const unsub = getNotifications(myProfile?.id);
+
+        return () => unsub();
+    }, [myProfile])
 
     const style = {
         position: 'absolute',
@@ -54,7 +61,7 @@ const Navbar = () => {
                 </div>
                 <div className="right center">
                     {/* <img width='50px' height='50px' src={myProfile.photoUrl ? myProfile.photoUrl : defaultAvatar}></img> */}
-                    <Avatar width={'50px'} height={'50px'} src={myProfile.photoUrl} id={myProfile.id} />
+                    <Avatar width={'50px'} height={'50px'} src={myProfile?.photoUrl} id={myProfile?.id} />
                     <Button size='small' variant='outlined' color='primary' onClick={logout}>Logout</Button>
                 </div>
             </div>

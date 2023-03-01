@@ -4,6 +4,7 @@ import Post from '../post/Post'
 import { getAllPosts } from '../../utils/FirebaseServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { setFeedType, updateAllPosts } from '../../redux/slices/postsSlice'
+import { setMenu } from '../../redux/slices/appConfigSlice'
 
 const Feed = () => {
 
@@ -17,6 +18,7 @@ const Feed = () => {
         if(allPosts.length === 0){
             getAllPosts();
         }
+        dispatch(setMenu('Home'));
     }, [])
 
 

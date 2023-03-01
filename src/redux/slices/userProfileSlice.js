@@ -18,13 +18,13 @@ const userProfileSlice = createSlice({
             state.allUserPosts.sort((a, b) => {
                 return b.createdAt - a.createdAt
             });
-            state.filteredPosts = state.allUserPosts.filter((post) => post.postType == 'img');
+            state.filteredPosts = state.allUserPosts.filter((post) => post.postType == 'image');
         },
 
         setSelectedPostType: (state, action) => {
             state.selectedPostType = action.payload;
             if(state.selectedPostType == 'Photos'){
-                state.filteredPosts = state.allUserPosts.filter((post) => post.postType == 'img');
+                state.filteredPosts = state.allUserPosts.filter((post) => post.postType == 'image');
             }
             else{
                 state.filteredPosts = state.allUserPosts.filter((post) => post.postType == 'video');

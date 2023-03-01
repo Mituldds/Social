@@ -26,11 +26,11 @@ const Post = ({ post, isFollowing }) => {
     const likeAndUnlike = (id) => {
         // setShowComment(false);
         dispatch(setLikeForPost({ id, currUserId: myProfile.id }));
-        postLikeUnlike(id, myProfile.id);
+        postLikeUnlike(id, myProfile?.id, myProfile);
     }
 
     const followAndUnfollow = (id) => {
-        userFollowUnFollow(id, myProfile.id);
+        userFollowUnFollow(id, myProfile?.id);
     }
 
     const loadComments = (e, id) => {
@@ -46,7 +46,7 @@ const Post = ({ post, isFollowing }) => {
         e.preventDefault();
         if (!text) return;
         const d = new Date().toString();
-        addComment(post.id, myProfile.id, text, d);
+        addComment(post, myProfile.id, text, d, myProfile);
         setText('');
     }
 
@@ -100,7 +100,7 @@ const Post = ({ post, isFollowing }) => {
             </div>
             {
                 showComment &&
-                <div className="post-comments">
+                <div className="post-comments" onClick={(e) => e.stopPropagation()}>
                     <div className="comment-list">
                         {
                             post?.commentCount === 0 ? <div className='no-comment center'>No Comments</div> : <div>

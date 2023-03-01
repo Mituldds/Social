@@ -12,6 +12,9 @@ import { getMyDoc } from './utils/FirebaseServices';
 import { useDispatch } from 'react-redux';
 import CreatePost from './components/createPost/CreatePost';
 import UserProfile from './components/userProfile/UserProfile';
+import Notification from './components/notification/Notification';
+import Feed from './components/feed/Feed';
+import Chat from './components/chat/Chat';
 
 const App = () => {
 
@@ -35,7 +38,11 @@ const App = () => {
             <Routes>
 
                 <Route element={<RequiredUser user={user} />}>
-                    <Route path='/' element={<Home />} />
+                    <Route element={<Home />}>
+                        <Route path='/' element={<Feed />} />
+                        <Route path='/chats' element={<Chat />} />
+                        <Route path='/notifications' element={<Notification />} />
+                    </Route>
                     {/* <Route path='/createPost' element={<CreatePost />} /> */}
                     <Route path='/userProfile' element={<UserProfile />} />
                 </Route>

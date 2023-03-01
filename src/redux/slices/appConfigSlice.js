@@ -6,6 +6,7 @@ const appConfigSlice = createSlice({
         myProfile: {},
         menu: "Home"
     },
+    
     reducers: {
         setMyProfile: (state, action) => {
             state.myProfile = action.payload;

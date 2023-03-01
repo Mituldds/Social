@@ -1,0 +1,52 @@
+.notification{
+    background-color: red;
+    height: 100%;
+    width: 100%;
+
+    .notification-heading{
+        background-color: green;
+        height: 20%;
+        
+        .main-heading{
+            background-color: blue;
+            height: 50%;
+            display: flex;
+            align-items: end;
+            padding-left: 5%;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .btn{
+            background-color: yellow;
+            height: 50%;
+            display: flex;
+            align-items: end;
+            padding-left: 5%;
+            gap: 0.5%;
+
+            button{
+                padding: 0.8% 3%;
+                font-size: 0.9rem;
+                background: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .selected{
+                border-bottom: 1px solid green;
+            }
+        }
+    }
+
+    .notification-content{
+        padding: 10px;
+        height: 80%;
+        background-color: aqua;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

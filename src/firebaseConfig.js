@@ -37,6 +37,7 @@ export const signInWithGoogle = async () => {
             photoUrl: res.user.photoURL,
             followers: [],
             followings: [],
+            notificationIndexCount: 0,
             createdAt: Date.now().toString(),
         }
 
@@ -62,6 +63,7 @@ export const signInWithFacebook = async () => {
             photoUrl: res.user.photoURL,
             followers: [],
             followings: [],
+            notificationIndexCount: 0,
             createdAt: Date.now().toString(),
         }
 

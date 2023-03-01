@@ -1,0 +1,155 @@
+.chat{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    // background-color: red;
+
+    .sidebar{
+        flex: 1;
+        background-color: rgba(221, 221, 221, 0.822);
+
+        .sidebar-heading{
+            height: 12%;
+            border-bottom: 1px solid black;
+            // background-color: blue;
+
+            .sidebar-search{
+                background: transparent;
+                height: 70%;
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: 0 10px;
+                font-size: 1rem;
+                // border-bottom: 1px solid black;
+            }
+        }
+
+        .people-list{
+            height: 88%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            overflow: auto;
+            // background-color: aquamarine;
+        }
+    }
+
+    .no-msg{
+        flex: 2.5;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-content{
+        flex: 2.5;
+        display: flex;
+        flex-direction: column;
+
+        .chat-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 12%;
+            padding: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: rgb(76, 101, 211);
+
+            .person-name, .other-options{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                font-size: 1rem;
+            }
+
+            .other-options{
+                div{
+                    .chat-icons{
+                        font-size: 1.4rem;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .messages{
+            padding: 5px 0;
+            height: 77%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow: auto;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .send-message{
+            position: relative;
+            height: 11%;
+            border-top: 1px solid black;
+            display: flex;
+            align-items: center;
+            // background-color: orange;
+
+            form{
+                width: 100%;
+                gap: 12px;
+
+                .msg-input{
+                    width: 80%;
+                }
+
+                label{
+                    .add-file-icon{
+                        font-size: 2rem;
+                        cursor: pointer;
+                    }
+                }
+
+                .add-file{
+                    display: none;
+                }
+    
+                .send-chat-btn{
+                    background-color: #2e7d32;
+                    padding: 5px 10px;
+    
+                    &:hover{
+                        background-color: rgb(8, 75, 8);
+                    }
+                }
+            }
+
+            .show-file-name{
+                padding: 2px 5px;
+                position: absolute;
+                height: 20px;
+                top: -30%;
+                right: 15%;
+                justify-content: start;
+                border: 1px solid black;
+                background-color: white;
+
+                .small-box{
+                    position: absolute;
+                    top: 10%;
+                    right: 0%;
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    z-index: -1;
+                    border: 1px solid black;
+                    background-color: white;
+                }
+
+                .remove{
+                    background-color: red;
+                    border-radius: 50%;
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

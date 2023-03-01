@@ -8,7 +8,9 @@ const Avatar = ({ src, id, width, height }) => {
 
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.stopPropagation();
+        if(!id) return;
         
         getAllPostsOfAUser(id).then((res) => {
             if(res.status === 'ok'){
